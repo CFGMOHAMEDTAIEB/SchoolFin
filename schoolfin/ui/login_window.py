@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import (
     QButtonGroup,
     QFrame,
@@ -19,6 +20,7 @@ from PyQt6.QtWidgets import (
 from schoolfin.auth.auth_service import authenticate
 from schoolfin.auth.session import set_session
 from schoolfin.db.db import app_db_path, init_db
+from schoolfin.ui.icon_utils import get_app_icon_path
 from schoolfin.ui.main_window import MainWindow
 
 
@@ -38,6 +40,10 @@ class LoginWindow(QWidget):
         self.setObjectName("LoginWindow")
         self.setWindowTitle("SchoolFin • Connexion")
         self.setMinimumSize(1040, 660)
+
+        icon_path = get_app_icon_path()
+        if icon_path is not None:
+            self.setWindowIcon(QIcon(str(icon_path)))
 
         self._selected_role = "admin"
         self.role_buttons: dict[str, QToolButton] = {}

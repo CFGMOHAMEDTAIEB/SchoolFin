@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import (
     QFrame,
     QHBoxLayout,
@@ -17,6 +18,7 @@ from PyQt6.QtWidgets import (
 )
 
 from schoolfin.auth.session import get_session, set_session
+from schoolfin.ui.icon_utils import get_app_icon_path
 from schoolfin.ui.pages.classes_page import ClassesPage
 from schoolfin.ui.pages.dashboard_page import DashboardPage
 from schoolfin.ui.pages.history_page import HistoryPage
@@ -31,6 +33,10 @@ class MainWindow(QMainWindow):
         self.setObjectName("MainWindow")
         self.setWindowTitle("SchoolFin • Tableau de bord")
         self.setMinimumSize(1180, 760)
+
+        icon_path = get_app_icon_path()
+        if icon_path is not None:
+            self.setWindowIcon(QIcon(str(icon_path)))
 
         session = get_session()
         self.role = session.role if session else "financial"

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- School building icon - simplified vector adapted from provided image -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="School icon">
+  <rect width="500" height="500" fill="none"/>
+  <!-- Roof -->
+  <polygon points="40,160 250,40 460,160 250,100" fill="#000" />
+
+  <!-- Main building body -->
+  <rect x="60" y="160" width="380" height="240" fill="#000" />
+
+  <!-- Left window -->
+  <g fill="#fff">
+    <rect x="95" y="200" width="70" height="90" />
+    <rect x="175" y="200" width="70" height="90" />
+    <rect x="295" y="200" width="70" height="90" />
+  </g>
+
+  <!-- Door / central arch -->
+  <g fill="#fff">
+    <rect x="220" y="240" width="60" height="160" />
+    <path d="M220 240 a30 30 0 0 1 60 0 v0" fill="#fff"/>
+  </g>
+
+  <!-- Pillars / details -->
+  <rect x="60" y="160" width="12" height="240" fill="#000" opacity="0.08"/>
+
+  <!-- Flag pole -->
+  <rect x="420" y="24" width="8" height="136" fill="#000" />
+  <path d="M428 36 q24 4 36 12 q-12 8 -36 12z" fill="#000" />
+
+  <!-- "SCHOOL" label above door area -->
+  <text x="250" y="180" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#fff" text-anchor="middle" font-weight="700">SCHOOL</text>
+</svg>

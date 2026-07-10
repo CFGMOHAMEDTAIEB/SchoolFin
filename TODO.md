@@ -1,0 +1,10 @@
+- [ ] Fix charts-related crashes:
+  - [ ] Ensure revenue_vs_expenses_chart never produces None values for float().
+  - [ ] Ensure payment_distribution_chart supplies labels with correct length for pie().
+- [ ] Fix dashboard chart rendering pipeline:
+  - [ ] Confirm all charts are serialized to JPEG bytes and loaded into QPixmap without png encoder usage.
+- [ ] Fix print_page:
+  - [x] Resolve QPrintDialog import mismatch by removing/avoiding it (current file already avoids it).
+  - [x] Fix QPrinter.pageRect() usage for PyQt6.
+  - [x] Cast drawText coordinates/sizes to int (Qt expects ints).
+  - [ ] Ensure printer document/page is started correctly when generating PDF.
